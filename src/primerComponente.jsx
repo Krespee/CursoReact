@@ -1,3 +1,4 @@
+import "./primerComponente.css"
 const string = "Esto es un texto";
 const number = 154545;
 const array = ["hola", "Mundo", 1, 2023];
@@ -15,7 +16,6 @@ export const PrimerComponente = () => {
       <h4>Variables tipo number:</h4> <p>{number}</p>
       <h4>Variables tipo array:</h4> <p>{array}</p>
       <h4>Variables tipo boolean:</h4> <p>{boolean}</p>
-      <h4>Variables tipo funcion:</h4> <p>{funcion}</p>
     </>
   );
 };
