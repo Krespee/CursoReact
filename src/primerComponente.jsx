@@ -1,21 +1,23 @@
-import "./primerComponente.css"
-const string = "Esto es un texto";
-const number = 154545;
-const array = ["hola", "Mundo", 1, 2023];
-const boolean = true;
-const objeto = { nombre: "Nayn", edad: 22 };
-const funcion = () => 1 + 1;
-const fecha = new Date();
-funcion();
+import PropTypes from "prop-types"
 
-export const PrimerComponente = () => {
+export const PrimerComponente = ({titulo, subtitulo, subtituloDos}) => {
+  console.log(titulo);
   return (
     <>
-      <h1>Variables en jsx</h1>
-      <h4>Variables tipo String:</h4> <p>{string}</p>
-      <h4>Variables tipo number:</h4> <p>{number}</p>
-      <h4>Variables tipo array:</h4> <p>{array}</p>
-      <h4>Variables tipo boolean:</h4> <p>{boolean}</p>
+      <h1>Props: {titulo} </h1>
+      <h2>Props: {subtitulo + 1} </h2>
+      <h2>Props: {subtituloDos + 1} </h2>
     </>
   );
 };
+
+PrimerComponente.propTypes = {
+  titulo: PropTypes.string.isRequired,
+  subtituloDos: PropTypes.number.isRequired,
+}
+
+PrimerComponente.defaultProps = {
+  titulo: "CUrso de React",
+  subtitulo:"seccion de props",
+  subtituloDos:2
+}
