@@ -29,7 +29,7 @@ export const ListadoApp = () => {
   return (
     <>
       <h1>Listado de temas del curso</h1>
-        <AgregarTarea></AgregarTarea>
+        <AgregarTarea agregarTarea={setArray}></AgregarTarea>
       <ol>
         {array.map((item) => (
           <Items

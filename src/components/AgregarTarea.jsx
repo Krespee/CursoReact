@@ -1,14 +1,18 @@
 import { useState } from "react"
 
-export const AgregarTarea = () => {
+export const AgregarTarea = ({agregarTarea}) => {
     const [inputValue, setinputValue] = useState("")
     const onInputChange = ({target}) =>{
         setinputValue(target.value)
         console.dir(target.value);
     }
     const onSubmit = (e) =>{
+        const envio = {
+            nombre: inputValue,
+            value: false
+        }
         e.preventDefault()
-        console.log(inputValue);
+        agregarTarea(tareas =>[...tareas, envio])
     }
   return (
     <form onSubmit={onSubmit}>
