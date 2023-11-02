@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AgregarTarea } from "./components/AgregarTarea";
 
 const Items = ({ nombre, visto }) => {
   return (
@@ -28,6 +29,7 @@ export const ListadoApp = () => {
   return (
     <>
       <h1>Listado de temas del curso</h1>
+        <AgregarTarea></AgregarTarea>
       <ol>
         {array.map((item) => (
           <Items
