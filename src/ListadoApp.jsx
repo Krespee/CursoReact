@@ -12,13 +12,13 @@ const Items = ({ nombre, visto }) => {
 
 export const ListadoApp = () => {
   let listadoSecciones = [
-    { nombre: "Instalaciones necesarias", visto: true },
-    { nombre: "Uso de Vite", visto: true },
-    { nombre: "Components", visto: true },
-    { nombre: "Variables", visto: true },
-    { nombre: "Props", visto: true },
-    { nombre: "rseState", visto: false },
-    { nombre: "Customhooks", visto: false },
+    { id: 1 , nombre: "Instalaciones necesarias", visto: true },
+    { id: 2 , nombre: "Uso de Vite", visto: true },
+    { id: 3 , nombre: "Components", visto: true },
+    { id: 4 , nombre: "Variables", visto: true },
+    { id: 5 , nombre: "Props", visto: true },
+    { id: 6 , nombre: "rseState", visto: false },
+    { id: 7 , nombre: "Customhooks", visto: false },
   ];
   const [array, setArray] = useState(listadoSecciones);
 
@@ -26,14 +26,25 @@ export const ListadoApp = () => {
     setArray([...array, {nombre:"Nuevo", visto:true}])
   };
 
+  const onAddTask = (val) => {
+    let valor = val.trim()
+    if (valor < 1) return
+    const envio = {
+        id: array.length + 1,
+        nombre: valor,
+        visto: false
+    }
+    setArray([...array, envio])
+  }
+
   return (
     <>
       <h1>Listado de temas del curso</h1>
-        <AgregarTarea agregarTarea={setArray}></AgregarTarea>
+        <AgregarTarea agregarTarea={onAddTask}></AgregarTarea>
       <ol>
         {array.map((item) => (
           <Items
-            key={item.nombre}
+            key={item.id}
             nombre={item.nombre}
             visto={item.visto}
           ></Items>
