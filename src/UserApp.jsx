@@ -3,19 +3,11 @@ import { useState } from "react";
 import { UserList } from "./components/UserList";
 
 export const UserApp = () => {
-    const [endPoint, setendPoint] = useState("users")
-
-
-    
+    const [endPoint, setEndPoint] = useState("users")
     const handleFetch =()=>{
-        setendPoint("comments")
+        setEndPoint("comments")
     }
     
-    //si utilizo un boton no hace falta el useEffect
-        // useEffect(()=>{
-        //     fetchUsers()
-        // }, [])
-        
   return (
     <>
     <h1>Lista de usuarios</h1>
