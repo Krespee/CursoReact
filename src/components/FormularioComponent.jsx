@@ -6,8 +6,7 @@ export const FormularioComponent = () => {
     email: "",
     password: "",
   };
-  const { userName, email, password, formState, onInputChange } =
-    useForm(initialform);
+  const { userName, email, password, formState, onInputChange } = useForm(initialform);
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(formState);
